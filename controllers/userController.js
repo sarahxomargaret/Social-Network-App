@@ -35,8 +35,8 @@ module.exports = {
         try {
             const user = await User.create(req.body);
             const thought = await Thought.findOneAndUpdate(
-                { _id: req.body.postId },
-                { $addToSet: { tags: tag._id } },
+                { _id: req.body.userId },
+                { $addToSet: { thought: thought._id } },
                 { new: true }
             );
         }
@@ -124,4 +124,4 @@ module.exports = {
                     res.status(500).json(err);
                 }
             }
-        }
+        };
