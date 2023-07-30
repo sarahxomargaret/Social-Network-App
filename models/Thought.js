@@ -12,6 +12,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now, 
+            get: //format date
         },
         username: {
             type: String,
@@ -28,11 +29,14 @@ const thoughtSchema = new Schema(
     }
 );
 
-ThoughtSchema.virtual('reactionCount').get(function() {
+thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
-const Thought = model('Thought', ThoughtSchema)
+//insert getter to format date
+
+
+const Thought = model('Thought', thoughtSchema)
 
 module.exports = Thought
 
