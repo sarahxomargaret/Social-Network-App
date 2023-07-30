@@ -13,7 +13,7 @@ MongoDB, Node.js, and Express are required to run this application. To install t
 Type in nodemon index to start the application.
 //insert video here
 
-## Contributing
+## Sources
 I used code from Tom Wood's mini-project, Activity 24, to help start my application.
 
 ## License
