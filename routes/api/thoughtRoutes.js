@@ -7,4 +7,4 @@ const {
     deleteThought,
     createReaction,
     removeReaction,
-} = require ()
+} = require ('../../controllers/thoughtController')
