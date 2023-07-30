@@ -33,14 +33,26 @@ module.exports = {
     // create a new user
     async createUser(req, res) {
         try {
-            const user = await User.create(req.body);
-            const thought = await Thought.findOneAndUpdate(
-                { _id: req.body.userId },
-                { $addToSet: { thought: thought._id } },
-                { new: true }
-            );
+          const user = await User.create(req.body);
+          const thought = await Thought.findOneAndUpdate(
+            { _id: req.body.thoughtId },
+            { $addToSet: { users: user._id } },
+            { new: true }
+          );
+            
+
+          if (!thought) {
+            return res
+              .status(404)
+              .json({ message: 'User created, but found no thought with that ID' });
+          }
+
+          res.json('User Created');
+        } catch (err) {
+          console.log(err);
+          res.status(500).json(err);
         }
-    },
+      },
 
 
     // update a user
