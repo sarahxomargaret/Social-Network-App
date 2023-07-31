@@ -14,7 +14,7 @@ Type in nodemon index to start the application.
 //insert video here
 
 ## Sources
-I used code from Tom Wood's mini-project, Activity 24, to help start my application.
+I incorperated code shown by Tom Wood's in his mini-project, Activity 24, to help start my application.
 
 ## License
 
